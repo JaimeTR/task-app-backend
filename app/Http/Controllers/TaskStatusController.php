@@ -25,7 +25,7 @@ class TaskStatusController extends Controller
      */
     public function store(Request $request)
     {
-        return TaskStatus::create($request->toArray());
+        return TaskStatus::create($request->all());
     }
 
     /**
@@ -48,7 +48,7 @@ class TaskStatusController extends Controller
      */
     public function update(Request $request, TaskStatus $status)
     {
-        $status->update($request->toArray());
+        $status->update($request->all());
         return $status;
     }
 

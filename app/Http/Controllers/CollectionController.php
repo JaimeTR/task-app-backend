@@ -26,7 +26,7 @@ class CollectionController extends Controller
      */
     public function store(Request $request)
     {
-        return Collection::create($request->toArray());
+        return Collection::create($request->all());
     }
 
     /**
@@ -49,7 +49,7 @@ class CollectionController extends Controller
      */
     public function update(Request $request, Collection $collection)
     {
-        $collection->update($request->toArray());
+        $collection->update($request->all());
         return $collection;
     }
 
