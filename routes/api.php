@@ -30,4 +30,4 @@ Route::apiResources([
 /**
  * Get all tasks from collection 😋
  */
-Route::get('collection/{collection}/task', [TaskController::class, 'show']);
+Route::get('collection/{collection}/tasks', [TaskController::class, 'show']);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Collection;
 use Illuminate\Http\Request;
 use App\Http\Resources\CollectionResource;
+use App\Http\Requests\collection\StoreRequest;
 
 class CollectionController extends Controller
 {
@@ -24,9 +25,9 @@ class CollectionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        return Collection::create($request->all());
+        return Collection::create($request->validated());
     }
 
     /**
@@ -37,7 +38,7 @@ class CollectionController extends Controller
      */
     public function show(Collection $collection)
     {
-        //
+        return CollectionResource::make($collection);
     }
 
     /**
